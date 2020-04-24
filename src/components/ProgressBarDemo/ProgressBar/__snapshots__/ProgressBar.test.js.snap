@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar ProgressBar render when value is greater than limit 1`] = `ShallowWrapper {}`;
+
+exports[`ProgressBar ProgressBar render when value is less than 0 1`] = `ShallowWrapper {}`;
+
+exports[`ProgressBar Renders ProgressBar with default props 1`] = `ShallowWrapper {}`;

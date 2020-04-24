@@ -1,0 +1,37 @@
+@mixin flexbox($flexDirection, $flexWrap) {
+    display: flex;
+    flex-flow: $flexDirection $flexWrap;
+}
+
+.center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bar-progress {
+    &-wrapper {
+        @include flexbox(column, wrap);
+        min-height: 100vh;
+        padding: 16px;
+    }
+    &-title {
+        text-align: center;
+    }
+    &-container {
+        @include flexbox(row, wrap);
+        justify-content: center;
+    }
+    &-controls {
+        @include flexbox(row, wrap);
+        justify-content: center;
+    }
+}
+.page {
+    &-main {
+        @include flexbox(column, wrap);
+        flex-grow: 1;
+        & > * {
+            margin: 8px;
+        }
+    }
+}

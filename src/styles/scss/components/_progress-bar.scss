@@ -1,0 +1,22 @@
+.bar-progress {
+    position: relative;
+    width: 200px;
+    height: 32px;
+    background-color: whitesmoke;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 5px;
+    text-align: center;
+
+    &-tracker {
+        height: 100%;
+        transition: width 0.2s ease-in-out;
+    }
+    &-percentage {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        line-height: 32px;
+        color: darkslategrey;
+    }
+}

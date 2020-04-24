@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBarDemo Default ProgressBarDemo render 1`] = `ShallowWrapper {}`;
+
+exports[`ProgressBarDemo ProgressBarDemo - API Failure Doesn't render progress bar data when API data fetch fails 1`] = `ReactWrapper {}`;
+
+exports[`ProgressBarDemo ProgressBarDemo - API Success Fetches API data 1`] = `ReactWrapper {}`;
