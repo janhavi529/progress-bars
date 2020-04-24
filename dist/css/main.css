@@ -28,19 +28,36 @@
   to {
     transform: rotate(360deg); } }
 
+.center-align {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.bar-progress-wrapper {
+  display: flex;
+  flex-flow: column wrap;
+  min-height: 100vh;
+  padding: 16px; }
+
 .bar-progress-title {
   text-align: center; }
 
 .bar-progress-container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
-  margin: 16px; }
+  justify-content: center; }
 
 .bar-progress-controls {
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
+
+.page-main {
+  display: flex;
+  flex-flow: column wrap;
+  flex-grow: 1; }
+  .page-main > * {
+    margin: 8px; }
 
 .bar-progress {
   position: relative;
@@ -49,12 +66,14 @@
   background-color: whitesmoke;
   border: 1px solid lightgrey;
   border-radius: 5px;
-  margin: 0px 5px; }
+  margin: 5px;
+  text-align: center; }
   .bar-progress-tracker {
     height: 100%;
     transition: width 0.2s ease-in-out; }
   .bar-progress-percentage {
-    position: relative;
-    left: 100px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
     line-height: 32px;
     color: darkslategrey; }

@@ -8,6 +8,8 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.19.2",
     "bootstrap": "^4.4.1",
+    "clean-css": "^4.2.3",
+    "concat": "^1.0.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "node-sass": "^4.14.0",
@@ -15,15 +17,24 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-loader-spinner": "^3.1.14",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "uglify-js": "^3.9.1"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "scss": "node-sass -o dist/css src/styles/scss/main.scss",
+    "concat:css": "concat -o dist/css/main.css dist/css/*.css",
+    "concat:js": "mkdir -p dist/js && concat -o dist/js/scripts.js src/**/*.js",
+    "concat": "npm run concat:css && npm run concat:js",
+    "cssmin": "cleancss -o dist/css/styles.min.css dist/css/main.css",
+    "uglify": "uglifyjs -o dist/js/scripts.min.js dist/js/scripts.js",
+    "build:css": "npm run scss && npm run concat:css && npm run cssmin",
+    "build:js": "npm run concat:js && npm run uglify",
+    "build": "npm run build:css && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "build-css": "node-sass --include-path scss src/styles/scss/main.scss public/css/main.css"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
